@@ -184,6 +184,50 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
+
+        {/* ── Google Maps embed ── */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="overflow-hidden rounded-2xl border border-border">
+            {/* Map label bar */}
+            <div className="flex items-center gap-3 border-b border-border bg-surface px-6 py-4">
+              <MapPin className="h-5 w-5 text-primary" />
+              <span className="text-sm font-semibold text-foreground">
+                м. Івано-Франківськ, вул. Г. Тарнавського, 1
+              </span>
+              <a
+                href="https://maps.app.goo.gl/ho8xduN6zLH8SJkR6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto text-xs text-foreground/40 hover:text-primary transition-colors"
+              >
+                Відкрити в Google Maps →
+              </a>
+            </div>
+            {/* Map iframe — grayscale + hue-rotate for dark themed look */}
+            <div className="relative h-80 w-full lg:h-96">
+              <iframe
+                title="BooMeraNG на карті — вул. Г. Тарнавського, 1, Івано-Франківськ"
+                src="https://maps.google.com/maps?q=вул.+Г.+Тарнавського+1+Івано-Франківськ&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{
+                  border: 0,
+                  filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)",
+                }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
