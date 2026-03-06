@@ -1,17 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  MessageCircle,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32" aria-label="Контакти">
+    <section
+      id="contact"
+      className="relative py-24 lg:py-32"
+      aria-label="Контакти"
+    >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -30,7 +28,8 @@ export default function Contact() {
             Готові <span className="text-gradient">розпочати?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-foreground/50">
-            Надішліть нам запит або зателефонуйте. Ми відповімо протягом 30 хвилин.
+            Надішліть нам запит або зателефонуйте. Ми відповімо протягом 30
+            хвилин.
           </p>
         </motion.div>
 
@@ -46,7 +45,10 @@ export default function Contact() {
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground/70">
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-medium text-foreground/70"
+                >
                   Ваше ім&apos;я
                 </label>
                 <input
@@ -58,7 +60,10 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-medium text-foreground/70">
+                <label
+                  htmlFor="phone"
+                  className="mb-2 block text-sm font-medium text-foreground/70"
+                >
                   Телефон
                 </label>
                 <input
@@ -71,7 +76,10 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground/70">
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-medium text-foreground/70"
+              >
                 Повідомлення
               </label>
               <textarea
@@ -107,7 +115,9 @@ export default function Contact() {
                 <Phone className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground">Телефони</h3>
+                <h3 className="text-base font-semibold text-foreground">
+                  Телефони
+                </h3>
                 <a
                   href="tel:+380664679995"
                   className="mt-1 block text-foreground/60 hover:text-foreground transition-colors"
@@ -129,7 +139,9 @@ export default function Contact() {
                 <MessageCircle className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground">Месенджери</h3>
+                <h3 className="text-base font-semibold text-foreground">
+                  Месенджери
+                </h3>
                 <p className="mt-1 text-foreground/60">
                   Viber, Telegram — напишіть нам у зручний спосіб
                 </p>
@@ -142,7 +154,9 @@ export default function Contact() {
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground">Адреса</h3>
+                <h3 className="text-base font-semibold text-foreground">
+                  Адреса
+                </h3>
                 <p className="mt-1 text-foreground/60">
                   м. Івано-Франківськ,
                   <br />
@@ -157,12 +171,14 @@ export default function Contact() {
                 <Mail className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-foreground">Email</h3>
+                <h3 className="text-base font-semibold text-foreground">
+                  Email
+                </h3>
                 <a
-                  href="mailto:info@boomerang-reklama.com.ua"
+                  href="mailto:reklama.bmng@gmail.com"
                   className="mt-1 block text-foreground/60 hover:text-foreground transition-colors"
                 >
-                  info@boomerang-reklama.com.ua
+                  reklama.bmng@gmail.com
                 </a>
               </div>
             </div>
