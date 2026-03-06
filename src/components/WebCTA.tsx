@@ -1,12 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Monitor, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-/**
- * WebCTA — Standalone "wow-section" that showcases the site itself
- * as proof of BooMeraNG's web dev capability and drives web orders.
- */
+/* ── Fake browser window that shows a snippet of "real" code ── */
+function BrowserMockup() {
+  return (
+    <div className="w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d14] shadow-2xl shadow-black/50">
+      {/* Browser chrome */}
+      <div className="flex items-center gap-2 border-b border-white/5 bg-[#111118] px-4 py-3">
+        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+        <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+        <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+        <div className="ml-3 flex-1 rounded-md bg-white/5 px-3 py-1 text-xs text-white/30">
+          boomerang-reklama.com.ua
+        </div>
+      </div>
+
+      {/* Code preview */}
+      <div className="p-5 font-mono text-xs leading-6 sm:text-sm">
+        <div>
+          <span className="text-[#ff6b6b]">export default </span>
+          <span className="text-[#ffa07a]">function </span>
+          <span className="text-[#ffe66d]">Page</span>
+          <span className="text-white/60">() {"{"}</span>
+        </div>
+        <div className="pl-4">
+          <span className="text-[#ff6b6b]">return </span>
+          <span className="text-white/60">{"("}</span>
+        </div>
+        <div className="pl-8">
+          <span className="text-[#6bcb77]">{"<"}</span>
+          <span className="text-[#ffa07a]">Hero </span>
+          <span className="text-[#ffe66d]">title</span>
+          <span className="text-white/60">{"="}</span>
+          <span className="text-[#6bcb77]">&quot;Ваш бренд&quot;</span>
+          <span className="text-[#6bcb77]">{" />"}</span>
+        </div>
+        <div className="pl-8">
+          <span className="text-[#6bcb77]">{"<"}</span>
+          <span className="text-[#ffa07a]">Services </span>
+          <span className="text-[#ffe66d]">animated</span>
+          <span className="text-[#6bcb77]">{" />"}</span>
+        </div>
+        <div className="pl-8">
+          <span className="text-[#6bcb77]">{"<"}</span>
+          <span className="text-[#ffa07a]">Contact </span>
+          <span className="text-[#ffe66d]">telegram</span>
+          <span className="text-white/60">{"="}</span>
+          <span className="text-[#6bcb77]">&quot;@boomerang&quot;</span>
+          <span className="text-[#6bcb77]">{" />"}</span>
+        </div>
+        <div className="pl-4">
+          <span className="text-white/60">{")"}</span>
+        </div>
+        <div>
+          <span className="text-white/60">{"}"}</span>
+        </div>
+
+        {/* Blinking cursor */}
+        <motion.div
+          className="mt-2 inline-block h-4 w-2 bg-primary"
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.8, repeat: Infinity }}
+        />
+      </div>
+
+      {/* Bottom status bar */}
+      <div className="flex items-center justify-between border-t border-white/5 bg-[#0a0a10] px-4 py-2 text-xs text-white/20">
+        <span>Next.js · Tailwind · Framer Motion</span>
+        <span className="text-green-500/60">✓ Lighthouse 100</span>
+      </div>
+    </div>
+  );
+}
+
 export default function WebCTA() {
   return (
     <section
@@ -15,85 +83,64 @@ export default function WebCTA() {
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      {/* Background ambient glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
-      </div>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-      <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
-        <motion.div
-          className="overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-surface via-background to-primary/5 p-10 text-center lg:p-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Icon */}
+          {/* ── Left: text ── */}
           <motion.div
-            className="mx-auto mb-6 inline-flex items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 p-4"
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
           >
-            <Monitor className="h-10 w-10 text-primary" />
-          </motion.div>
+            {/* Eyebrow — просто і без пафосу */}
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
+              До речі
+            </p>
 
-          {/* Eyebrow */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-            <Sparkles className="h-4 w-4" />
-            Цей сайт — наша робота
-          </div>
+            <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-heading)]">
+              Цей сайт — теж{" "}
+              <span className="text-gradient">наша робота.</span>
+              <br />
+              Хочете такий?
+            </h2>
 
-          {/* Heading */}
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-heading)]">
-            Враже дизайн?{" "}
-            <span className="text-gradient">Замовте такий же!</span>
-          </h2>
+            <p className="mt-6 text-lg text-foreground/50">
+              Робимо сайти для бізнесу — лендінги, корпоративні, інтернет&#8209;магазини.
+              Швидко, з анімаціями, з SEO.
+            </p>
 
-          {/* Body */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/50">
-            Ми не лише робимо вивіски — ми створюємо{" "}
-            <span className="text-foreground/80 font-medium">сучасні, швидкі та красиві сайти</span>{" "}
-            для бізнесу. Лендінги, корпоративні сайти, інтернет-магазини — все під ключ.
-            <br className="hidden sm:block" />
-            Ваші клієнти будуть так само вражені, як зараз ви.
-          </p>
+            {/* Proof points — без кульок і гріда, просто 3 рядки */}
+            <ul className="mt-8 space-y-3 text-base text-foreground/60">
+              <li>— Готово за 7–14 днів</li>
+              <li>— Адаптив під мобільний з першого дня</li>
+              <li>— Видно в Google з першого тижня</li>
+            </ul>
 
-          {/* Feature pills */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {[
-              "Next.js / React",
-              "SEO-оптимізація",
-              "Адаптивний дизайн",
-              "Анімації Framer Motion",
-              "Швидке завантаження",
-              "Підтримка та хостинг",
-            ].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-foreground/60"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <motion.a
               href="#contact"
-              className="animate-glow group flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-base font-semibold text-white transition-all hover:brightness-110"
+              className="animate-glow mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-8 py-4 text-base font-semibold text-white transition-all hover:brightness-110"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
             >
-              Замовити сайт
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              Обговорити проєкт
+              <ArrowRight className="h-5 w-5" />
             </motion.a>
-            <p className="text-sm text-foreground/40">
-              Безкоштовна консультація · Прорахунок за 30 хвилин
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* ── Right: browser mockup ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <BrowserMockup />
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 }
+
