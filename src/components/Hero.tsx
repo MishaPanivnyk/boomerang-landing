@@ -59,7 +59,7 @@ export default function Hero() {
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2 text-sm text-foreground/60"
         >
           <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-          Рекламне агентство повного циклу
+          Реклама · Вивіски · Веб-сайти
         </motion.div>
 
         {/* ── Main heading with staggered word animation ── */}
@@ -93,7 +93,7 @@ export default function Hero() {
         >
           Власне виробництво всіх видів реклами. 10 років досвіду.
           <br className="hidden sm:block" />
-          Від макета до монтажу — все під ключ.
+          Від макета до монтажу — і навіть ваш сайт.
         </motion.p>
 
         {/* ── CTA buttons ── */}

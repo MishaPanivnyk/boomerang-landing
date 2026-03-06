@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Palette, Lightbulb, MonitorSmartphone, Truck } from "lucide-react";
+import { Palette, Lightbulb, MonitorSmartphone, Truck, Globe } from "lucide-react";
 
 const services = [
   {
@@ -36,6 +36,15 @@ const services = [
     gradient: "from-rose-600/20 to-red-400/20",
     iconColor: "text-red-300",
   },
+  {
+    icon: Globe,
+    title: "Розробка сайтів",
+    description:
+      "Створюємо сучасні, швидкі та красиві сайти для вашого бізнесу — лендінги, корпоративні сайти, інтернет-магазини. Цей сайт — наша робота. Хочете такий само?",
+    gradient: "from-red-600/20 to-rose-600/20",
+    iconColor: "text-primary",
+    featured: true,
+  },
 ];
 
 export default function Services() {
@@ -65,11 +74,15 @@ export default function Services() {
         </motion.div>
 
         {/* ── Service cards grid ── */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, idx) => (
             <motion.article
               key={service.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 lg:p-10"
+              className={`group relative overflow-hidden rounded-2xl border bg-surface p-8 transition-all duration-500 hover:shadow-2xl lg:p-10 ${
+                (service as typeof service & { featured?: boolean }).featured
+                  ? "border-primary/40 hover:border-primary hover:shadow-primary/10 sm:col-span-2 lg:col-span-1"
+                  : "border-border hover:border-primary/30 hover:shadow-primary/5"
+              }`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -80,6 +93,13 @@ export default function Services() {
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
               />
+
+              {/* Featured badge for web dev card */}
+              {(service as typeof service & { featured?: boolean }).featured && (
+                <div className="absolute top-4 right-4 animate-glow rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-xs font-bold text-white">
+                  НОВА ПОСЛУГА
+                </div>
+              )}
 
               {/* Card content */}
               <div className="relative z-10">

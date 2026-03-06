@@ -52,6 +52,7 @@ export default function Footer() {
               <li>Об&apos;ємні літери</li>
               <li>Сітілайти</li>
               <li>Брендинг</li>
+              <li className="text-primary/70">Розробка сайтів</li>
             </ul>
           </div>
 

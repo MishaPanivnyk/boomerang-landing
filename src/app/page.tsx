@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
+import WebCTA from "@/components/WebCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Process />
         <Portfolio />
         <Testimonials />
+        <WebCTA />
         <Contact />
       </main>
       <Footer />
