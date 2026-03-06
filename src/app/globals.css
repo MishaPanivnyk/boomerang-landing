@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ── Custom theme tokens ── */
+@theme inline {
+  --color-background: #050510;
+  --color-foreground: #f0f0f5;
+  --color-primary: #6C3AED;
+  --color-primary-light: #8B5CF6;
+  --color-accent: #06B6D4;
+  --color-accent-light: #22D3EE;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-syne);
+}
+
+/* ── Base styles ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+::-webkit-scrollbar-thumb {
+  background: #6C3AED;
+  border-radius: 3px;
+}
+
+/* ── Marquee animation for testimonials ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Glow pulse for CTA buttons ── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(108, 58, 237, 0.4), 0 0 60px rgba(108, 58, 237, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(108, 58, 237, 0.6), 0 0 80px rgba(108, 58, 237, 0.2); }
+}
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ── Gradient text utility ── */
+.text-gradient {
+  background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass morphism utility ── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Grid background pattern for hero ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(108, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
