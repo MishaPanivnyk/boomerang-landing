@@ -2,12 +2,12 @@
 
 /* ── Custom theme tokens ── */
 @theme inline {
-  --color-background: #050510;
-  --color-foreground: #f0f0f5;
-  --color-primary: #6C3AED;
-  --color-primary-light: #8B5CF6;
-  --color-accent: #06B6D4;
-  --color-accent-light: #22D3EE;
+  --color-background: #080508;
+  --color-foreground: #f5f0f0;
+  --color-primary: #DC2626;
+  --color-primary-light: #EF4444;
+  --color-accent: #F97316;
+  --color-accent-light: #FB923C;
   --color-surface: rgba(255, 255, 255, 0.04);
   --color-surface-hover: rgba(255, 255, 255, 0.08);
   --color-border: rgba(255, 255, 255, 0.08);
@@ -35,7 +35,7 @@ body {
   background: #050510;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6C3AED;
+  background: #DC2626;
   border-radius: 3px;
 }
 
@@ -53,8 +53,8 @@ body {
 
 /* ── Glow pulse for CTA buttons ── */
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(108, 58, 237, 0.4), 0 0 60px rgba(108, 58, 237, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(108, 58, 237, 0.6), 0 0 80px rgba(108, 58, 237, 0.2); }
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 60px rgba(220, 38, 38, 0.15); }
+  50% { box-shadow: 0 0 35px rgba(220, 38, 38, 0.7), 0 0 90px rgba(249, 115, 22, 0.2); }
 }
 .animate-glow {
   animation: glow-pulse 3s ease-in-out infinite;
@@ -62,7 +62,7 @@ body {
 
 /* ── Gradient text utility ── */
 .text-gradient {
-  background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+  background: linear-gradient(135deg, #EF4444, #F97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -79,7 +79,7 @@ body {
 /* ── Grid background pattern for hero ── */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(108, 58, 237, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108, 58, 237, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(220, 38, 38, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 38, 38, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }

@@ -138,7 +138,7 @@ export default function Contact() {
 
             {/* Address */}
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border border-border bg-surface p-3 text-emerald-400">
+              <div className="rounded-xl border border-border bg-surface p-3 text-red-400">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
@@ -153,7 +153,7 @@ export default function Contact() {
 
             {/* Email */}
             <div className="flex items-start gap-4">
-              <div className="rounded-xl border border-border bg-surface p-3 text-amber-400">
+              <div className="rounded-xl border border-border bg-surface p-3 text-orange-400">
                 <Mail className="h-6 w-6" />
               </div>
               <div>

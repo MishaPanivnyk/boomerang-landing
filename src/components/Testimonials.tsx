@@ -49,7 +49,7 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[0] }) {
       {/* Star rating */}
       <div className="mb-3 flex gap-1">
         {Array.from({ length: item.rating }).map((_, i) => (
-          <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+          <Star key={i} className="h-4 w-4 fill-orange-400 text-orange-400" />
         ))}
       </div>
       <p className="text-sm leading-relaxed text-foreground/70 italic">

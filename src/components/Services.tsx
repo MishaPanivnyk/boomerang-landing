@@ -9,32 +9,32 @@ const services = [
     title: "Макетування та брендинг",
     description:
       "Створюємо унікальний візуальний стиль вашого бренду: логотипи, фірмовий стиль, макети вивісок та рекламних матеріалів.",
-    gradient: "from-violet-500/20 to-purple-500/20",
-    iconColor: "text-violet-400",
+    gradient: "from-red-600/20 to-rose-500/20",
+    iconColor: "text-rose-400",
   },
   {
     icon: Lightbulb,
     title: "Власне виробництво вивісок",
     description:
       "Світлові короби, об'ємні літери, LED-вивіски, неонові вивіски — виготовляємо на власному виробництві з гарантією якості.",
-    gradient: "from-amber-500/20 to-orange-500/20",
-    iconColor: "text-amber-400",
+    gradient: "from-orange-500/20 to-red-500/20",
+    iconColor: "text-orange-400",
   },
   {
     icon: MonitorSmartphone,
     title: "Оренда сітілайтів",
     description:
       "Розміщення зовнішньої реклами на сітілайтах по всій Україні. Ефективний охват цільової аудиторії у вашому місті.",
-    gradient: "from-cyan-500/20 to-blue-500/20",
-    iconColor: "text-cyan-400",
+    gradient: "from-red-500/20 to-orange-600/20",
+    iconColor: "text-red-400",
   },
   {
     icon: Truck,
     title: "Доставка та монтаж",
     description:
       "Професійна доставка і монтаж рекламних конструкцій будь-якої складності. Працюємо по всій Україні та за кордоном.",
-    gradient: "from-emerald-500/20 to-green-500/20",
-    iconColor: "text-emerald-400",
+    gradient: "from-rose-600/20 to-red-400/20",
+    iconColor: "text-red-300",
   },
 ];
 
