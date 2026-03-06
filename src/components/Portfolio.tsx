@@ -7,19 +7,53 @@ import { X } from "lucide-react";
 
 /* ── Portfolio items — replace src with real images later ── */
 const portfolioItems = [
-  { id: 1, title: "Світловий короб «Кавʼярня»", category: "Вивіски", aspect: "aspect-[4/3]" },
-  { id: 2, title: "Обʼємні літери «Ресторан»", category: "Обʼємні літери", aspect: "aspect-[3/4]" },
-  { id: 3, title: "LED-вивіска «Магазин»", category: "LED", aspect: "aspect-[4/3]" },
-  { id: 4, title: "Брендинг «Салон краси»", category: "Брендинг", aspect: "aspect-[3/4]" },
-  { id: 5, title: "Сітілайт «Акція»", category: "Сітілайти", aspect: "aspect-[4/5]" },
-  { id: 6, title: "Фасадна вивіска «Аптека»", category: "Вивіски", aspect: "aspect-[4/3]" },
+  {
+    id: 1,
+    title: "Світловий короб «Кавʼярня»",
+    category: "Вивіски",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    id: 2,
+    title: "Обʼємні літери «Ресторан»",
+    category: "Обʼємні літери",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: 3,
+    title: "LED-вивіска «Магазин»",
+    category: "LED",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    id: 4,
+    title: "Брендинг «Салон краси»",
+    category: "Брендинг",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: 5,
+    title: "Сітілайт «Акція»",
+    category: "Сітілайти",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    id: 6,
+    title: "Фасадна вивіска «Аптека»",
+    category: "Вивіски",
+    aspect: "aspect-[4/3]",
+  },
 ];
 
 export default function Portfolio() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="relative py-24 lg:py-32" aria-label="Портфоліо">
+    <section
+      id="portfolio"
+      className="relative py-24 lg:py-32"
+      aria-label="Портфоліо"
+    >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -57,9 +91,11 @@ export default function Portfolio() {
               whileHover={{ y: -4 }}
             >
               {/* Portfolio image */}
-              <div className={`${item.aspect} w-full relative transition-transform duration-700 group-hover:scale-105`}>
+              <div
+                className={`${item.aspect} w-full relative transition-transform duration-700 group-hover:scale-105`}
+              >
                 <Image
-                  src="/portfolio-1.jpg"
+                  src="/portfolio-1.webp"
                   alt={item.title}
                   fill
                   className="object-cover"
@@ -73,7 +109,9 @@ export default function Portfolio() {
                 <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">
                   {item.category}
                 </span>
-                <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                <h3 className="text-lg font-bold text-foreground">
+                  {item.title}
+                </h3>
               </div>
             </motion.div>
           ))}
@@ -97,8 +135,10 @@ export default function Portfolio() {
             >
               <div className="aspect-video w-full relative flex items-center justify-center">
                 <Image
-                  src="/portfolio-1.jpg"
-                  alt={portfolioItems.find((p) => p.id === selectedId)?.title || ''}
+                  src="/portfolio-1.webp"
+                  alt={
+                    portfolioItems.find((p) => p.id === selectedId)?.title || ""
+                  }
                   fill
                   className="object-cover"
                   sizes="100vw"
