@@ -33,13 +33,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden w-full"
       aria-label="Головна секція"
     >
-      {/* ── Ambient floating orbs for depth ── */}
-      <FloatingOrb className="top-1/4 -left-32 h-96 w-96 bg-primary" delay={0} />
-      <FloatingOrb className="bottom-1/4 -right-32 h-80 w-80 bg-accent" delay={2} />
-      <FloatingOrb className="top-1/2 left-1/2 h-64 w-64 bg-primary-light" delay={4} />
+      {/* ── Ambient floating orbs — clipped to prevent horizontal overflow ── */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <FloatingOrb className="top-1/4 -left-32 h-96 w-96 bg-primary" delay={0} />
+        <FloatingOrb className="bottom-1/4 -right-32 h-80 w-80 bg-accent" delay={2} />
+        <FloatingOrb className="top-1/2 left-1/2 h-64 w-64 bg-primary-light" delay={4} />
+      </div>
 
       {/* ── Grid pattern overlay ── */}
       <div className="absolute inset-0 bg-grid" />
