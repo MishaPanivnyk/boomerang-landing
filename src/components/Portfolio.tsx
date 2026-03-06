@@ -56,17 +56,16 @@ export default function Portfolio() {
               onClick={() => setSelectedId(item.id)}
               whileHover={{ y: -4 }}
             >
-              {/* Placeholder image — using gradient as placeholder */}
-              <div
-                className={`${item.aspect} w-full bg-gradient-to-br from-primary/20 via-background to-accent/20 transition-transform duration-700 group-hover:scale-105`}
-              >
-                {/* When real images available, replace with next/image:
-                <Image src={item.src} alt={item.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" /> */}
-                <div className="flex h-full items-center justify-center">
-                  <span className="text-4xl font-bold text-foreground/10 font-[var(--font-heading)]">
-                    {item.id}
-                  </span>
-                </div>
+              {/* Portfolio image */}
+              <div className={`${item.aspect} w-full relative transition-transform duration-700 group-hover:scale-105`}>
+                <Image
+                  src="/portfolio-1.jpg"
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={idx === 0}
+                />
               </div>
 
               {/* Overlay appears on hover */}
@@ -96,10 +95,15 @@ export default function Portfolio() {
               className="relative max-h-[80vh] max-w-3xl w-full overflow-hidden rounded-2xl border border-border bg-surface"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="aspect-video w-full bg-gradient-to-br from-primary/20 via-background to-accent/20 flex items-center justify-center">
-                <span className="text-6xl font-bold text-foreground/10 font-[var(--font-heading)]">
-                  {selectedId}
-                </span>
+              <div className="aspect-video w-full relative flex items-center justify-center">
+                <Image
+                  src="/portfolio-1.jpg"
+                  alt={portfolioItems.find((p) => p.id === selectedId)?.title || ''}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                  priority
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-foreground">
